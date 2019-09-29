@@ -1,0 +1,26 @@
+{
+    "name": "chenlin/jwt-helper",
+    "description": "this is  a simple jwt helper class to help you generate your token by jwt quickly!",
+    "type": "library",
+    "authors": [
+        {
+            "name": "chenlin",
+            "email": "1036565912@qq.com",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "lcobucci/jwt": "^3.3",
+        "php": "^7.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Chenlin\\JWT\\" : "src"
+        },
+        "files": [
+            "src/constant.php"
+        ]
+    },
+    "license": "apache-2.0",
+    "minimum-stability": "stable"
+}
