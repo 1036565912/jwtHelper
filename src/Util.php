@@ -33,7 +33,7 @@ class Util
      */
     public function ajaxSuccess(array $data, string $msg)
     {
-        return $this->ajaxReturn($data, $msg, SUCCESS_CODE);
+        return $this->ajaxReturn($data, $msg, JWT_SUCCESS_CODE);
     }
 
     /**
@@ -46,7 +46,7 @@ class Util
      */
     public function ajaxError(array $data = [], string $msg = '系统出错')
     {
-        return $this->ajaxReturn($data, $msg, ERROR_CODE);
+        return $this->ajaxReturn($data, $msg, JWT_ERROR_CODE);
     }
 
     /**
