@@ -103,7 +103,7 @@ class Util
         $app = $this->getEasyWechat();
         $session = $app->auth->session($code);
         //这里暂时用open_id key来代替
-        return $session['openid'];
+        return $session;
 
     }
 
