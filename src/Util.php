@@ -94,11 +94,9 @@ class Util
     }
 
     /**
-     * 根据code、iv、encryptData来进行解密获取open_id
+     * 根据传递的临时code来获取open_id
      * @param string $code
-     * @return string
-     * @throws \EasyWeChat\Kernel\Exceptions\InvalidConfigException
-     * @throws \EasyWeChat\Kernel\Exceptions\DecryptException
+     * @return mixed
      */
     public function getOpenId(string $code)
     {
@@ -107,6 +105,19 @@ class Util
         //这里暂时用open_id key来代替
         return $session['openid'];
 
+    }
+
+    /**
+     * 根据code、iv、encryptData来进行解密获取open_id
+     * @param string $session
+     * @param string $encryptedData
+     * @param string $iv
+     * @return
+     * @throws \EasyWeChat\Kernel\Exceptions\InvalidConfigException
+     * @throws \EasyWeChat\Kernel\Exceptions\DecryptException
+     */
+    public function getUserInfo(string $session, string $encryptedData, string $iv) {
+        return $this->getEasyWechat()->encryptor->decryptData($session, $iv, $encryptedData);
     }
 
     /**
